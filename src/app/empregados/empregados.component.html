@@ -1,0 +1,46 @@
+<div class="container">
+  <h2 class="display-4">
+    Registrar empregado
+  </h2>
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+    <div class="form-group">
+      <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control"
+      required  placeholder="Nome completo">
+      <div class="validation-error" *ngIf="name.invalid && name.touched">Nome é obrigatório</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input name="idade" #idade="ngModel" [(ngModel)]="service.formData.idade" class="form-control" placeholder="Idade">
+          </div>
+          <div class="form-group col-md-6">
+            <input name="sexo" #sexo="ngModel" [(ngModel)]="service.formData.sexo" class="form-control" placeholder="Sexo">
+          </div>
+    </div>
+
+    <div class="form-group">
+      <input name="endereco" #endereco="ngModel" [(ngModel)]="service.formData.endereco" class="form-control"
+       placeholder="Endereço">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input name="cidade" #cidade="ngModel" [(ngModel)]="service.formData.cidade" class="form-control"
+          placeholder="Cidade">
+      </div>
+      <div class="form-group col-md-6">
+        <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control"
+          placeholder="País">
+      </div>
+      <div class="form-group col-md-6">
+        <input name="cargo" #cargo="ngModel" [(ngModel)]="service.formData.cargo" class="form-control"
+          placeholder="Cargo">
+      </div>
+      <div class="form-group col-md-6">
+        <input name="setor" #setor="ngModel" [(ngModel)]="service.formData.setor" class="form-control" placeholder="Setor">
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block  btn-info" >Submit</button>
+      </div>
+  </form>
+</div>

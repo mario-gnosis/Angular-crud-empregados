@@ -1,6 +1,6 @@
-export class Empregado {
+export class EmpregadoFire {
   // tslint:disable-next-line:no-inferrable-types
-  id: number = 0;
+  id: string;
   name: string;
   idade: number;
   sexo: string;
@@ -9,5 +9,4 @@ export class Empregado {
   cidade: string;
   cargo: string;
   country: string;
-  fone: string;
 }
